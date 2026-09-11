@@ -1,13 +1,13 @@
-About <pkg_name>-feedstock
+About ag2-feedstock
 =======================
 
 Feedstock license: [BSD-3-Clause](LICENSE)
 
-Home: <home_url>
+Home: https://ag2.ai
 
-Package license: <pkg_license>
+Package license: Apache-2.0
 
-Summary: <pkg_summary>
+Summary: A programming framework for agentic AI
 
 
 Current release info
@@ -15,19 +15,19 @@ Current release info
 
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-<pkg_name>-green.svg)](https://anaconda.org/anaconda/<pkg_name>) | [![Conda Downloads](https://img.shields.io/conda/dn/anaconda/<pkg_name>.svg)](https://anaconda.org/anaconda/<pkg_name>) | [![Conda Version](https://img.shields.io/conda/vn/anaconda/<pkg_name>.svg)](https://anaconda.org/anaconda/<pkg_name>) | [![Conda Platforms](https://img.shields.io/conda/pn/anaconda/<pkg_name>.svg)](https://anaconda.org/anaconda/<pkg_name>) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-ag2-green.svg)](https://anaconda.org/anaconda/ag2) | [![Conda Downloads](https://img.shields.io/conda/dn/anaconda/ag2.svg)](https://anaconda.org/anaconda/ag2) | [![Conda Version](https://img.shields.io/conda/vn/anaconda/ag2.svg)](https://anaconda.org/anaconda/ag2) | [![Conda Platforms](https://img.shields.io/conda/pn/anaconda/ag2.svg)](https://anaconda.org/anaconda/ag2) |
 
-Installing <pkg_name>
+Installing ag2
 ==================
 
-Installing `<pkg_name>` from the main channel can be achieved by:
+Installing `ag2` from the main channel can be achieved by:
 
 ```
-conda install <pkg_name>
+conda install ag2
 ```
 
-It is possible to list all of the versions of `<pkg_name>` available on your platform with `conda`:
+It is possible to list all of the versions of `ag2` available on your platform with `conda`:
 
 ```
-conda search <pkg_name>
+conda search ag2
 ```

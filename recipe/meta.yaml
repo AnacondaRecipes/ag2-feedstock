@@ -1,45 +1,104 @@
-{% set name = "<PLEASE ADD PKG NAME>" %}
-{% set version = "<PLEASE ADD PKG VERSION>" %}
+{% set name = "ag2" %}
+{% set version = "1.0.4" %}
 
 package:
-  name: {{ name|lower }}
+  name: {{ name }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: <sha256>
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 2a27442df922e32571afec8a86113ab762a44eb12725d139581300e9615ba493
 
 build:
   number: 0
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  skip: True  # [py<38]
+  skip: true  # [py<310]
 
 requirements:
   host:
     - python
+    - hatchling
     - pip
+    - uv-build >=0.9.2,<0.13
   run:
     - python
+    - pydantic >=2.6.1,<3
+    - httpx >=0.28.1,<1
+    - anyio >=4.0.0,<5.0.0
+    - pyyaml >=6.0.2
+    - fast-depends >=3.0.8,<4.0.0
+  run_constrained:
+    # a2a
+    - a2a-sdk >=1.1.0,<2
+    # a2ui
+    - jsonschema >=4.18.0,<5
+    - starlette >=0.40,<2
+    # acp
+    - agent-client-protocol >=0.12.0,<0.13
+    - uvicorn >=0.51.0,<1
+    # ag-ui
+    - ag-ui-protocol >=0.1.20,<0.2
+    # openai
+    - openai >=3.4.0,<4
+    # anthropic
+    - anthropic >=1.2.0,<2
+    # gemini
+    - google-genai >=1.68.0,<3.0
+    # elevenlabs
+    - elevenlabs >=1.50.0,<3
+    # xai
+    - xai-sdk >=1.12.2,<2
+    # zai
+    - zai-sdk >=0.2.3,<1
+    # mistral
+    - mistralai >=2.8.0,<3
+    # ollama
+    - ollama >=0.4.7
+    # bedrock
+    - boto3 >=1.34.149
+    # dashscope
+    - dashscope >=1.25.13
+    # redis
+    - redis >=5.0,<9
+    # tracing
+    - opentelemetry-sdk >=1.20
+    # metrics
+    - prometheus-client >=0.20.0,<0.30.0
+    # # flaml
+    # - numpy >=2.1  # [py>=313]
+    # - numpy>=1.24.0,<2.0.0  # [py<313]
+    # tavily
+    - tavily-python >=0.7.4,<0.8
+    # ddgs
+    - ddgs >=9.0.0,<10
+    # perplexity
+    - perplexityai >=0.30.0,<1
+    # mcp
+    - mcp >=2.0.0,<3
+    - mcp-types >=2.0.0,<3
+    # mcp-ui
+    - mcp-ui-server >=1.0.0
 
 test:
   imports:
-    - {{ name.replace('-', '.') }}
+    - ag2
   requires:
     - pip
   commands:
     - pip check
 
 about:
-  home: <PLEASE ADD HOME URL>
-  summary: <PLEASE ADD SUMMARY>
+  home: https://www.ag2.ai/
+  dev_url: https://github.com/ag2ai/ag2
+  doc_url: https://docs.ag2.ai
+  summary: A programming framework for agentic AI
   description: |
-    <PLEASE ADD DESCRIPTION>
-  license: <PLEASE ADD LICENSE>
-  license_family: <PLEASE ADD LICENSE_FAMILY>
-  license_file: <PLEASE_ADD_LICENSE_FILE>
-  dev_url: <PLEASE ADD DEV URL>
-  doc_url: <PLEASE ADD DOC URL>
+    AG2 (distributed on PyPI as ag2) is a programming framework for building
+    multi-agent and agentic AI applications.
+  license: Apache-2.0
+  license_family: Apache
+  license_file: LICENSE
 
 extra:
   recipe-maintainers:
-    - Jrice1317
+    - jan-janssen
