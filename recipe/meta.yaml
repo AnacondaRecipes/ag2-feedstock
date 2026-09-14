@@ -78,6 +78,28 @@ requirements:
 test:
   imports:
     - ag2
+    - ag2.a2a
+    - ag2.a2ui
+    - ag2.acp
+    # ImportError: ag-ui-protocol is not installed. Please install it with:
+    # pip install ag2[ag-ui]
+    # - ag2.ag_ui
+    - ag2.config
+    - ag2.eval
+    - ag2.events
+    - ag2.extensions
+    - ag2.files
+    - ag2.knowledge
+    - ag2.live
+    - ag2.mcp
+    - ag2.mcp_ui
+    - ag2.middleware
+    - ag2.network
+    - ag2.observers
+    - ag2.policies
+    - ag2.response
+    - ag2.streams
+    - ag2.tools
   requires:
     - pip
   commands:
